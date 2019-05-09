@@ -6,8 +6,7 @@ var api = require('./api');
 
 var conn = function() {
   console.log("this is nice");
-
-  //server.listen(8010);
+  server.listen(8010);
 
   app.get('/', function (req, res) {
     res.sendfile(__dirname + '/index.html');
