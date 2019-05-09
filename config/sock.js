@@ -4,7 +4,7 @@ var io = require('socket.io')(server);
 
 var api = require('./api');
 
-var conn = function() {
+/*var conn = function() {
   console.log("this is nice");
 
   server.listen(8010);
@@ -12,7 +12,7 @@ var conn = function() {
   app.get('/', function (req, res) {
     res.sendfile(__dirname + '/index.html');
   });
-};
+};*/
 
 var fromClient = function() {
 
