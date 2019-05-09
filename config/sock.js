@@ -26,4 +26,4 @@ io.on('connection', function (socket) {
   });
 });
 }
-module.exports = {conn,fromClient}
+module.exports = {fromClient}
