@@ -4,15 +4,15 @@ var io = require('socket.io')(server);
 
 var api = require('./api');
 
-/*var conn = function() {
+var conn = function() {
   console.log("this is nice");
 
-  server.listen(8010);
+  //server.listen(8010);
 
   app.get('/', function (req, res) {
     res.sendfile(__dirname + '/index.html');
   });
-};*/
+};
 
 var fromClient = function() {
 
@@ -26,4 +26,4 @@ io.on('connection', function (socket) {
   });
 });
 }
-module.exports = {fromClient}
+module.exports = {conn,fromClient}

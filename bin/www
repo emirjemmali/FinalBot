@@ -24,12 +24,23 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-var socket = require('../config/sock');
+
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-//socket.conn();
-socket.fromClient();
+app.get('/', function (req, res) {
+    res.sendfile(__dirname + '/index.html');
+});
+var io = require('socket.io')(server);
+io.on('connection', function (socket) {
+    socket.on('fromClient', function (data) {
+        console.log(data.client);
+        api.getRes(data.client).then(function(res){
+            console.log('response', res);
+            socket.emit('fromServer', { server: res });
+        });
+    });
+});
 
 /**
  * Normalize a port into a number, string, or false.
