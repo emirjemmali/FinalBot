@@ -28,7 +28,7 @@ var socket = require('../config/sock');
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-socket.conn();
+//socket.conn();
 socket.fromClient();
 
 /**
